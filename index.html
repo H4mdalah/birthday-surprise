@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Kotak dengan Modal</title>
+  <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
+</head>
+<body>
+
+    <div class="grid-container">
+        <div class="box" style="background-image: url('images/box1.jpg');"
+             data-content="Konten modal untuk kotak 1"> 
+            <img src="images/playbutton.png" class="play-button" alt="Play">
+        </div>
+        <div class="box" style="background-image: url('images/box1.jpg');"
+             data-content="<img src='https://via.placeholder.com/400x200' alt='gambar dalam modal'>">
+            <img src="images/playbutton.png" class="play-button" alt="Play">
+        </div>
+        <div class="box" style="background-image: url('images/box1.jpg');"
+             data-content="<video controls width='100%'><source src='https://www.w3schools.com/html/mov_bbb.mp4' type='video/mp4'></video>">
+            <img src="images/playbutton.png" class="play-button" alt="Play">
+        </div>
+        <div class="box" style="background-image: url('images/box1.jpg');"
+             data-content="Teks di dalam modal yang feminin dan elegan ✨">
+            <img src="images/playbutton.png" class="play-button" alt="Play">
+        </div>
+    </div>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+</body>
+</html>
