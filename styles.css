@@ -1,17 +1,76 @@
 * {
     box-sizing: border-box;
   }
-  
+
   body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     background: #E6E6FA;
+
+    display: flex;
+    flex-direction: column; /* 👈 penting: susun vertikal */
+    align-items: center;     /* pusatkan secara horizontal */
+    padding: 30px 20px;      /* beri ruang atas & samping */
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #fff0f5, #fdeff9);
+
   }
   
+  .opening-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #ffe0f0, #fef4f9);
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    color: #d63384;
+    font-size: 28px;
+    transition: opacity 1s ease;
+  }
+
+  .opening-text {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .btn-open {
+    padding: 10px 20px;
+    background: #ff69b4;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+  }
+  .btn-open:hover {
+    background: #e45a9b;
+  }
+
+  .opening-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .header-text {
+    text-align: center;
+    font-family: 'Segoe UI', cursive;
+    color: #d63384;
+  }
+
+  .header-text h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
   .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 160px);
@@ -24,10 +83,8 @@
     height: 160px;
     background-size: cover;
     background-position: center;
-    border-radius: 15px;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transition: transform 0.2s ease;
   }
   
@@ -62,6 +119,7 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.6);
+    transition: opacity 0.4s ease;
   }
   
   .modal-content {
@@ -84,18 +142,57 @@
       max-width: 98%;
       margin-top: 20px;
       transform: none;
-      top: auto;
+      top: 5%;
     }
+  }
+
+  .modal-content button {
+    background-color: #ff69b4; /* pink romantis */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: 'Segoe UI', cursive;
+    margin-top: 15px;
+  }
+
+  .modal-content button:hover {
+    background-color: #ff85c1;
+    transform: scale(1.05);
   }
   
   .close {
     float: right;
     font-size: 24px;
-    color: #999;
+    font-weight: bolder;
+    color: #060606;
     cursor: pointer;
+    margin-bottom: 20px;
   }
   
   .close:hover {
     color: red;
   }
+
+  .modal-content {
+    font-family: 'Dancing Script', cursive; /* tambah font romantis */
+    background: linear-gradient(to bottom right, #fffafc, #ffe0f0); /* gradasi cantik */
+    box-shadow: 0 10px 25px rgba(255, 105, 180, 0.3); /* pink shadow */
+  }
+
+  .modal-content h2 {
+    color: #d63384;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .modal-content p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+  }
+
   

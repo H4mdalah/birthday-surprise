@@ -3,28 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grid Kotak dengan Modal</title>
+  <link rel="icon" href="/images/icon.png">
+  <title>Happy Birthday 🎉</title>
   <link rel="stylesheet" href="styles.css">
     <script src="index.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="opening" class="opening-screen">
+      <h1 class="opening-text">Hai Sayang..🎉</h1>
+      <p class="opening-text">Ready for taking your journey?</p>
+      <button id="btn-open" class="btn-open">Tekan Disini &hearts;</button>
+    </div>
+
+    <div class="header-text"> 
+      <h3>Gift For The Prettiest 🎁  </h3>
+    </div>
 
     <div class="grid-container">
-        <div class="box" style="background-image: url('images/box1.jpg');"
-             data-content="Konten modal untuk kotak 1"> 
-            <img src="images/playbutton.png" class="play-button" alt="Play">
+        <div class="box" style="background-image: url('images/box1.png');"
+             data-content=" <b> <i> HAPPY BIRTHDAY SAYANGG 🎉🎉🎉 </i> </b>
+             <video controls width='100%'><source src='videos/birthday.mp4' type='video/mp4'></video>
+             <b> Keep Your Smile For Me Ya Sayang &hearts; &hearts; &hearts; </b>">
         </div>
-        <div class="box" style="background-image: url('images/box1.jpg');"
-             data-content="<img src='https://via.placeholder.com/400x200' alt='gambar dalam modal'>">
-            <img src="images/playbutton.png" class="play-button" alt="Play">
+        <div class="box" style="background-image: url('images/box2.png');"
+             data-content="">
         </div>
-        <div class="box" style="background-image: url('images/box1.jpg');"
-             data-content="<video controls width='100%'><source src='https://www.w3schools.com/html/mov_bbb.mp4' type='video/mp4'></video>">
-            <img src="images/playbutton.png" class="play-button" alt="Play">
+        <div class="box" style="background-image: url('images/box3.png');"
+             data-content="<h5> Selamat ulang tahun ya sayang yang ke 18 tahun 🥳<br>
+             Ini kali pertama aku ngerayain ulang tahun kamu dalam status pacaran (xixixi). Sehat selalu ya sayang. Tetap jadi Dian Salsabila
+             yang aku kenal selama ini. Terima kasih atas semua ceritanya, perhatian yang kamu kasih ke aku, foto foto dan video keseharian kamu dan masih banyak hal spesial tentang kamu lainnya. Kedepannya pasti banyak
+             tantangan ataupun rintangan yang bakal kamu hadapin sayang. Tapi ingat, apapun yang terjadi, aku selalu berpihak sama kamu sayang. Kamu bisa andelin aku disituasi apapun itu. Semoga kamu selalu happy sama aku
+             ya sayang. Adapun doa dari aku, semoga kamu sehat selalu, lancar rezekinya, selalu bahagia, dan doa doa lainnya yang ga bisa aku tuliskan semua sayang. Maaf ya atas surprise yang apa adanya ini hehe <br>
+             Last but not least I love U forever and after sayang 💖💖💖</h5>">
         </div>
-        <div class="box" style="background-image: url('images/box1.jpg');"
-             data-content="Teks di dalam modal yang feminin dan elegan ✨">
-            <img src="images/playbutton.png" class="play-button" alt="Play">
+        <div class="box" style="background-image: url('images/box4.png');"
+        data-content="
+          <p>Coba Masukin dong sayang seberapa senang kamu setelah lihat kejutan ini ( dari 1-10 yah)? 🥰</p>
+            <input type='range' id='happinessLevel' min='1' max='10' value='8' oninput='document.getElementById(`happinessValue`).innerText = this.value' />
+            <p>Skor kamu: <span id='happinessValue'>8</span> / 10</p>
+            <button onclick='sendToWhatsapp()' style='margin-top: 10px;'>Kirim 🤍</button>
+          ">
         </div>
     </div>
 
@@ -35,6 +54,8 @@
       <div id="modal-body"></div>
     </div>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 </body>
 </html>
