@@ -23,11 +23,13 @@
     <div class="grid-container">
         <div class="box" style="background-image: url('images/box1.png');"
              data-content=" <b> <i> HAPPY BIRTHDAY SAYANGG 🎉🎉🎉 </i> </b>
-             <video controls width='100%'><source src='videos/birthday.mp4' type='video/mp4'></video>
+             <video controls width='100%' onloadedmetadata='this.volume=0.5'><source src='videos/birthday.mp4' type='video/mp4'></video>
              <b> Keep Your Smile For Me Ya Sayang &hearts; &hearts; &hearts; </b>">
         </div>
         <div class="box" style="background-image: url('images/box2.png');"
-             data-content="">
+             data-content="
+             <b> <i> This day is yours sayangg 💖💖💖 </i> </b>
+              <video controls width='100%'><source src='videos/saybirthday.mp4' type='video/mp4'></video>">
         </div>
         <div class="box" style="background-image: url('images/box3.png');"
              data-content="<h5> Selamat ulang tahun ya sayang yang ke 18 tahun 🥳<br>
@@ -39,7 +41,7 @@
         </div>
         <div class="box" style="background-image: url('images/box4.png');"
         data-content="
-          <p>Coba Masukin dong sayang seberapa senang kamu setelah lihat kejutan ini ( dari 1-10 yah)? 🥰</p>
+          <p>Coba Masukin dong sayang seberapa senang kamu setelah lihat kejutan ini ( dari 1-10 yah ) 🥰</p>
             <input type='range' id='happinessLevel' min='1' max='10' value='8' oninput='document.getElementById(`happinessValue`).innerText = this.value' />
             <p>Skor kamu: <span id='happinessValue'>8</span> / 10</p>
             <button onclick='sendToWhatsapp()' style='margin-top: 10px;'>Kirim 🤍</button>
@@ -55,6 +57,8 @@
     </div>
   </div>
 
+  <audio id="bg-music" src="music/perfect.mp3" loop></audio>
+  <button id="toggleMusic" class="music-toggle">🔊</button>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 </body>

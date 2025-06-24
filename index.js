@@ -72,6 +72,29 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("btn-open").addEventListener("click", () => {
     const opening = document.getElementById("opening");
     opening.classList.add("hidden");
+
+    // Memutar musik setelah interaksi
+    const bgMusic = document.getElementById("bg-music");
+      if (bgMusic) {
+        bgMusic.volume = 0.5; 
+        bgMusic.play().catch(e => {
+        });
+      }
+    });
+
+  const musicBtn = document.getElementById("toggleMusic");
+  const music = document.getElementById("bg-music");
+  let isPlaying = true;
+
+  musicBtn.addEventListener("click", () => {
+    if (isPlaying) {
+      music.pause();
+      musicBtn.textContent = "🔇";
+    } else {
+      music.play();
+      musicBtn.textContent = "🔊";
+    }
+    isPlaying = !isPlaying;
   });
 
   document.querySelectorAll(".box").forEach((box) => {
@@ -86,20 +109,47 @@ document.addEventListener("DOMContentLoaded", function () {
       modalBody.innerHTML = box.getAttribute("data-content");
       modal.style.display = "block";
 
-      // // mainkan musik
-      // if (music && music.paused) music.play().catch(() => {});
-      // // Efek confetti acak
+      setTimeout(() => {
+      const video = modalBody.querySelector("video");
+      const bgMusic = document.getElementById("bg-music");
+
+      if (video && bgMusic) {
+        // Saat video diputar, hentikan musik latar
+        video.addEventListener("play", () => {
+          bgMusic.pause();
+        });
+
+        // Saat video dihentikan/di-pause, lanjutkan musik
+        video.addEventListener("pause", () => {
+          bgMusic.play().catch(() => {});
+        });
+
+        // Saat video selesai, lanjutkan musik
+        video.addEventListener("ended", () => {
+          bgMusic.play().catch(() => {});
+        });
+      }
+    }, 300);
+
       randomConfetti();
     });
   });
 
   closeBtn.onclick = function () {
     modal.style.display = "none";
+    const videos = modal.querySelectorAll("video");
+    videos.forEach(video => {
+      video.pause();
+    });
   };
 
   window.onclick = function (event) {
     if (event.target === modal) {
       modal.style.display = "none";
+      const videos = modal.querySelectorAll("video");
+      videos.forEach(video => {
+        video.pause();
+      });
     }
   };
 });
