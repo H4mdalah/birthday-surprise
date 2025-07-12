@@ -21,7 +21,7 @@ HTML, CSS, and Vanilla JavaScript
 
 🚀 Getting Started
 1. Clone this repository:
-    git clone https://github.com/h4mdalah/surprise-ulang-tahun.git
+    git clone https://github.com/H4mdalah/birthday-surprise.git
 2. Open index.html in your browser
 
    
